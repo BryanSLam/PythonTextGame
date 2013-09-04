@@ -14,7 +14,9 @@ class Player():
 		self.magicPoints = 5 + self.intelligence
 		
 		#map
-		self.userMap = [["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"]]
+		self.userMap = [["[ ]", "[ ]", "[ ]", "[ ]"],\
+		["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],\
+		["[ ]", "[ ]", "[ ]", "[ ]"]]
 
 	
 #Dungeons and dragons mechanics	
@@ -29,17 +31,19 @@ class Player():
 		if(rollToHit >= monsterDexterity):
 			#If hit commence damage sequence
 			if(critical == true):
-				return randint(0,6) + randint(0,6) + self.strength - monsterArmor
+				return randint(0,6) + randint(0,6) + self.strength -\
+				monsterArmor
 			else:
 				return randint(0,6) + self.strength - monsterArmor
 		else:
 			print "Missed!"
 			return 0
 	
-#Check the current position if its a valid move, if it is then mark the map where the character currently is and update the map where the 
-#character has been and return new position	
+#Check the current position if its a valid move, if it is then mark the map
+#where the character currently is and update the map where the character has 
+#been and return new position	
 
-#the grid is bottom right is 0,0 and top left is 3,3
+#The grid is bottom right is 0,0 and top left is 3,3
 
 	#direction is 'n','w','s','e'
 	#position is a tuple row, column
@@ -76,7 +80,9 @@ class Player():
 		
 			
 	def newFloor(self):
-		self.userMap = [["[O]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"]]
+		self.userMap = [["[O]", "[ ]", "[ ]", "[ ]"],\
+		["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],\
+		["[ ]", "[ ]", "[ ]", "[ ]"]]
 
 		
 	def displayMap(self):
