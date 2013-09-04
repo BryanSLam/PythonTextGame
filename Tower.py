@@ -17,18 +17,28 @@ class Floor(object):
 
 	def __init__(self, floorNumber, character):
 		#Map setup
-		self.generatedMap = [[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]]
+		#M for monster
+		#I for item
+		#E for empty
+		self.generatedMap = [['E','E','E','E'],['E','E','E','E'],['E','E','E','E'],['E','E','E','E']]
 		self.floorNumber = floorNumber
 		if(floorNumber == 1):
 			self.monsterCount = 2
 		
 		#monster placement
+		
+		#Extra comments to explain my thoughtflow
+		#The map is 4x4 and the loop runs the number of times needed to fill the monster count
+		#during each iteration of the loop it picks a random spot on the map and if that spot contains
+		#something then handle that
 		for i in range (0, self.monsterCount):
-			row = randint(0,4)
-			column = randint(0,4)
-			while(self.generatedMap[row][column] == column):
-				row = randint(0,4)
-				column = randint(0,4)
+			row = randint(0,3)
+			column = randint(0,3)
+			print row
+			print column
+			while(self.generatedMap[row][column] != 'E'):
+				row = randint(0,3)
+				column = randint(0,3)
 			self.generatedMap[row][column] = 'M'
 		
 		
