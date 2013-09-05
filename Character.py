@@ -1,5 +1,6 @@
 #Character
 from random import randint
+from Items import Item
 class Player():
 	def __init__(self, job):
 		self.job = job

@@ -3,6 +3,7 @@ import sys
 from random import randint
 from Tower import Floor
 from Character import Player
+from Items import Item
 #Game intro
 
 #Main Menu
