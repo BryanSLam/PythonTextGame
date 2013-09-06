@@ -10,14 +10,15 @@ class Player():
 		
 		#make stats more job specific later on
 		self.strength = randint(5,10)
-		self.dexterity = randint(5,10)
-		self.intelligence = randint(5,10)
+		self.dexterity = randint(0,5)
+		self.intelligence = randint(0,5)
 		self.MP = 5 + self.intelligence
 		
 		#map
 		self.userMap = [["[O]", "[ ]", "[ ]", "[ ]"],\
-		["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],\
-		["[ ]", "[ ]", "[ ]", "[ ]"]]
+						["[ ]", "[ ]", "[ ]", "[ ]"],\
+						["[ ]", "[ ]", "[ ]", "[ ]"],\
+						["[ ]", "[ ]", "[ ]", "[ ]"]]
 
 	
 #Dungeons and dragons mechanics	
@@ -49,23 +50,18 @@ class Player():
 	#direction is 'n','w','s','e'
 	#position is a tuple row, column
 	def move(self, direction, position):
-		canMove = True
 		if(direction == 'w'):
 			if(position[1] == 3):
-				canMove = False
+				return False
 		elif(direction == 'n'):
 			if(position[0] == 3):
-				canMove = False
+				return False
 		elif(direction == 's'):
 			if(position[0] == 0):
-				canMove = False
+				return False
 		elif(direction == 'e'):
 			if(position[1] == 0):
-				canMove = False	
-
-				
-		if(canMove == False):
-			return False
+				return False	
 	#update the map
 		updateMap(position, direction)
 	
@@ -82,8 +78,9 @@ class Player():
 			
 	def newFloor(self):
 		self.userMap = [["[O]", "[ ]", "[ ]", "[ ]"],\
-		["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],\
-		["[ ]", "[ ]", "[ ]", "[ ]"]]
+						["[ ]", "[ ]", "[ ]", "[ ]"],\
+						["[ ]", "[ ]", "[ ]", "[ ]"],\
+						["[ ]", "[ ]", "[ ]", "[ ]"]]
 
 		
 	def displayMap(self):

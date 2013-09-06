@@ -8,7 +8,7 @@ from Character import Player
 from Items import Item
 
 #Helper methods
-def displayMenu(character):
+def displayMenu(character, characterPosition):
 	print "What action would you like to take?"
 	print "1: Move"
 	print "2: Check Map"
@@ -18,7 +18,13 @@ def displayMenu(character):
 	while(s !='1' and s !='2'and s !='3'and s !='0'):
 		s = raw_input('>')
 		if(s == '1'):
-			print "wert"
+			direction = -1
+			while(direction != 'w' and direction != 'e' and direction !='n'\
+					and direction != 's'):
+				print "Which direction would you like to move in?"
+				print "e (east) n (north) s (south) w (west)"
+				direction = raw_input('>')
+			#if(character.move
 		elif(s == '0'):
 			sys.exit()
 			
@@ -42,7 +48,7 @@ if(menuSelection == '1'):
 	
 	a treasure chest, a shop, or a monster.  The floor boss will only appear 
 	
-	after clearing every monster on the floor on the top right corner of the 
+	after clearing every monster on the floor on the top left corner of the 
 	
 	grid and a notification will let you know when the boss appears.\n"""
 	
@@ -63,8 +69,9 @@ if(menuSelection == '1'):
 	
 	floor1 = Floor(1, mainCharacter)
 	mainCharacter.newFloor()
-	#Display the menu when character has spawned on the bottom left
-	displayMenu(mainCharacter)
+	bossAppeared = False
+	#Display the menu when character has spawned on the bottom right
+	position = displayMenu(mainCharacter, (0,3))
 	
 elif(menuSelection == '2'):
 	sys.exit()
