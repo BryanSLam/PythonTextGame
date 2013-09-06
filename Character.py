@@ -45,7 +45,7 @@ class Player():
 #where the character currently is and update the map where the character has 
 #been and return new position	
 
-#The grid is bottom right is 0,0 and top left is 3,3
+#The grid is top left is 0,0 bottom right is 3,3
 
 	#direction is 'n','w','s','e'
 	#position is a tuple row, column
@@ -91,10 +91,10 @@ class Player():
 	def updateMap(self, position, direction):
 		self.userMap[position[0]][position[1]] = "[X]"
 		if(direction == 'w'):
-			return (position[0],position[1]+1)
+			(position[0],position[1]+1) = "[O]"
 		elif(direction == 'n'):
-			return (position[0]+1,position[1])
+			(position[0]+1,position[1]) = "[O]"
 		elif(direction == 's'):
-			return (position[0]-1,position[1]+1)
+			(position[0]-1,position[1]+1) = "[O]"
 		elif(direction == 'e'):
-			return (position[0],position[1]-1)	
+			(position[0],position[1]-1) = "[O]"	

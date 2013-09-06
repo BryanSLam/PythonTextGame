@@ -24,7 +24,7 @@ def displayMenu(character, characterPosition):
 				print "Which direction would you like to move in?"
 				print "e (east) n (north) s (south) w (west)"
 				direction = raw_input('>')
-			#if(character.move
+			return character.move(direction, characterPosition)
 		elif(s == '0'):
 			sys.exit()
 			
@@ -48,11 +48,12 @@ if(menuSelection == '1'):
 	
 	a treasure chest, a shop, or a monster.  The floor boss will only appear 
 	
-	after clearing every monster on the floor on the top left corner of the 
+	after clearing every monster on the floor on the bottom right corner of the 
 	
 	grid and a notification will let you know when the boss appears.\n"""
 	
 	characterSelection = 0
+	position = (0,0)
 	while(characterSelection != '1'):
 		print "Select your class:"
 		print "1: Warrior"
@@ -70,8 +71,8 @@ if(menuSelection == '1'):
 	floor1 = Floor(1, mainCharacter)
 	mainCharacter.newFloor()
 	bossAppeared = False
-	#Display the menu when character has spawned on the bottom right
-	position = displayMenu(mainCharacter, (0,3))
+	#Display the menu when character has spawned on the top left
+	position = displayMenu(mainCharacter, position)
 	
 elif(menuSelection == '2'):
 	sys.exit()

@@ -19,10 +19,10 @@ class Floor(object):
 
 	def __init__(self, floorNumber, character):
 		#Map setup: M for monster, I for item, E for empty, C for character
-		self.generatedMap = [['E','E','E','E'],\
+		self.generatedMap = [['C','E','E','E'],\
 							['E','E','E','E'],\
 							['E','E','E','E'],\
-							['E','E','E','C']]
+							['E','E','E','E']]
 		self.floorNumber = floorNumber
 		if(floorNumber == 1):
 			self.monsterCount = 2
