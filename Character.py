@@ -4,7 +4,7 @@ from Items import Item
 class Player():
 	def __init__(self, job):
 		self.job = job
-		self.hitPoints = randint(21,30)
+		self.HP = randint(21,30)
 		self.gold = 0
 		self.inventory = []
 		
@@ -12,10 +12,10 @@ class Player():
 		self.strength = randint(5,10)
 		self.dexterity = randint(5,10)
 		self.intelligence = randint(5,10)
-		self.magicPoints = 5 + self.intelligence
+		self.MP = 5 + self.intelligence
 		
 		#map
-		self.userMap = [["[ ]", "[ ]", "[ ]", "[ ]"],\
+		self.userMap = [["[O]", "[ ]", "[ ]", "[ ]"],\
 		["[ ]", "[ ]", "[ ]", "[ ]"],["[ ]", "[ ]", "[ ]", "[ ]"],\
 		["[ ]", "[ ]", "[ ]", "[ ]"]]
 

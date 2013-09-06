@@ -39,6 +39,10 @@ class Floor(object):
 				column = randint(0,3)
 			self.generatedMap[row][column] = 'M'
 		
-		print self.generatedMap
-		
+		self.displayMap()
+			
+	def displayMap(self):
+		for i in self.generatedMap:
+			print "\n"
+			print i
 		

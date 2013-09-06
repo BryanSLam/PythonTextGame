@@ -1,4 +1,6 @@
 #Initial Setup
+#The came module will handle all of the event handling as well as acting
+#as the overall observer of the other modules
 import sys
 from random import randint
 from Tower import Floor
@@ -26,9 +28,9 @@ if(menuSelection == '1'):
 	
 	a treasure chest, a shop, or a monster.  The floor boss will only appear 
 	
-	after clearing every monster on the floor on the top left corner of the grid
-
-	and a notification will let you know when the boss appears.\n"""
+	after clearing every monster on the floor on the top right corner of the 
+	
+	grid and a notification will let you know when the boss appears.\n"""
 	
 	characterSelection = 0
 	while(characterSelection != '1'):
@@ -41,15 +43,29 @@ if(menuSelection == '1'):
 		print "Strength:", mainCharacter.strength
 		print "Dexterity:", mainCharacter.dexterity
 		print "Intelligence:", mainCharacter.intelligence
-		print "HP:", mainCharacter.hitPoints
-		print "MP:", mainCharacter.magicPoints
+		print "HP:", mainCharacter.HP
+		print "MP:", mainCharacter.MP
 		
 	
 	floor1 = Floor(1, mainCharacter)
+	mainCharacter.newFloor()
+	#Display the menu when character has spawned on the bottom left
+	
+	print "What action would you like to take?"
+	print "1: Move"
+	print "2: Check Map"
+	print "3: Item Menu"
+	print "0: Quit Game"
+	
+	s = -1
+	while(s !='1' and s !='2'and s !='3'and s !='0'):
+		s = raw_input('>')
+		if(s == '1'):
+			print "wert"
+		elif(s == '0'):
+			sys.exit()
 	
 elif(menuSelection == '2'):
 	sys.exit()
-	
-
 
 
