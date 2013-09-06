@@ -6,8 +6,22 @@ from random import randint
 from Tower import Floor
 from Character import Player
 from Items import Item
-#Game intro
 
+#Helper methods
+def displayMenu(character):
+	print "What action would you like to take?"
+	print "1: Move"
+	print "2: Check Map"
+	print "3: Item Menu"
+	print "0: Quit Game"
+	s=-1
+	while(s !='1' and s !='2'and s !='3'and s !='0'):
+		s = raw_input('>')
+		if(s == '1'):
+			print "wert"
+		elif(s == '0'):
+			sys.exit()
+			
 #Main Menu
 menuSelection = 0
 while(menuSelection != '1' and menuSelection != '2'):
@@ -50,22 +64,10 @@ if(menuSelection == '1'):
 	floor1 = Floor(1, mainCharacter)
 	mainCharacter.newFloor()
 	#Display the menu when character has spawned on the bottom left
-	
-	print "What action would you like to take?"
-	print "1: Move"
-	print "2: Check Map"
-	print "3: Item Menu"
-	print "0: Quit Game"
-	
-	s = -1
-	while(s !='1' and s !='2'and s !='3'and s !='0'):
-		s = raw_input('>')
-		if(s == '1'):
-			print "wert"
-		elif(s == '0'):
-			sys.exit()
+	displayMenu(mainCharacter)
 	
 elif(menuSelection == '2'):
 	sys.exit()
+
 
 
